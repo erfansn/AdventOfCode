@@ -1,15 +1,31 @@
 fun main() {
     fun part1(input: List<String>): Int {
-        return input.size
+        val foodPackCalories = mutableListOf<Int>()
+        var elvesFoodCalorie = 0
+        for (calorie in input.map(String::toIntOrNull)) {
+            if (calorie == null) {
+                foodPackCalories += elvesFoodCalorie
+                elvesFoodCalorie = 0
+                continue
+            }
+            elvesFoodCalorie += calorie
+        }
+        return foodPackCalories.max()
     }
 
     fun part2(input: List<String>): Int {
-        return input.size
+        val foodPackCalories = mutableListOf<Int>()
+        var elvesFoodCalorie = 0
+        for (calorie in input.map(String::toIntOrNull)) {
+            if (calorie == null) {
+                foodPackCalories += elvesFoodCalorie
+                elvesFoodCalorie = 0
+                continue
+            }
+            elvesFoodCalorie += calorie
+        }
+        return foodPackCalories.sortedDescending().take(3).sum()
     }
-
-    // test if implementation meets criteria from the description, like:
-    val testInput = readInput("Day01_test")
-    check(part1(testInput) == 1)
 
     val input = readInput("Day01")
     println(part1(input))
