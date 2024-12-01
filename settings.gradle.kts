@@ -1,5 +1,4 @@
-rootProject.name = "AOC-2023"
-
+rootProject.name = "AOC-2024"
 dependencyResolutionManagement {
     repositories {
         mavenCentral()
