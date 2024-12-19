@@ -22,3 +22,7 @@ powerAssert {
     functions = listOf("kotlin.check")
     includedSourceSets = listOf("main")
 }
+
+dependencies {
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0")
+}
